@@ -22,8 +22,5 @@ COPY entrypoint.sh entrypoint.sh
 
 RUN ["chmod", "+x", "entrypoint.sh"]
 
-RUN ["ls", "-l"]
-RUN ["ls", "-l", "/"]
-RUN ["ls", "-l", "/actions/terravision"]
-
-ENTRYPOINT [ "./entrypoint.sh" ]
+# Absolute path has to be specified as GHA will override the current working directory during container runtime
+ENTRYPOINT ["/actions/entrypoint.sh"]
