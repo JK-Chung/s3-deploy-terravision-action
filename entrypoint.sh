@@ -1,3 +1,3 @@
 #!/bin/bash -l
-cd /actions/terravision
-./terravision
+ls -l
+./terravision/terravision
