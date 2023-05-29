@@ -1,0 +1,6 @@
+name: 'Terravision - Deploy to S3'
+description: 'Generates and Deploys Infrastructure Diagrams'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args: []
