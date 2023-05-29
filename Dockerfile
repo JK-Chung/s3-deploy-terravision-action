@@ -21,4 +21,9 @@ RUN ["pip", "install", "-r", "./terravision/requirements.txt"]
 COPY entrypoint.sh entrypoint.sh
 
 RUN ["chmod", "+x", "entrypoint.sh"]
-CMD [ "./entrypoint.sh" ]
+
+RUN ["ls", "-l"]
+RUN ["ls", "-l", "/"]
+RUN ["ls", "-l", "/actions/terravision"]
+
+ENTRYPOINT [ "./entrypoint.sh" ]
