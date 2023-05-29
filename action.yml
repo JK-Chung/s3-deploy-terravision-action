@@ -1,4 +1,4 @@
-name: 'TerravisionS3Deploy'
+name: 'Terravision - S3 Deploy'
 description: 'Generates and Deploys Infrastructure Diagrams'
 runs:
   using: 'docker'
