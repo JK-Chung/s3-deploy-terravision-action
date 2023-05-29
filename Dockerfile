@@ -3,6 +3,7 @@ FROM ubuntu:22.04
 
 # Install Dependencies
 # FIXME explicitely define version to maximise stability
+# TODO it'd be really great if we can combine all of these into a single Docker layer
 RUN ["apt", "update"]
 RUN ["apt", "install", "-y", "python3"]
 RUN ["apt", "install", "-y", "python3-pip"]

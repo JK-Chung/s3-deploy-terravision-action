@@ -1,3 +1,4 @@
 #!/bin/bash -l
-ls -l
-./terravision/terravision
+export PATH=${PATH}:/actions/terravision
+
+terravision
