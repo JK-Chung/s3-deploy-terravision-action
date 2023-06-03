@@ -1,12 +1,12 @@
 #!/bin/bash -l
-AWS_ACCESS_KEY_ID="$1"
-AWS_SECRET_ACCESS_KEY="$2"
-AWS_DEFAULT_REGION="$3"
-AWS_S3_BUCKET_BASE_URI="$4"
+export AWS_ACCESS_KEY_ID="$1"
+export AWS_SECRET_ACCESS_KEY="$2"
+export AWS_DEFAULT_REGION="$3"
+export AWS_S3_BUCKET_BASE_URI="$4"
 
-cd /github/workspace
-
-ls
+# Copy over the git repository contents into our own directory
+cp -r /github/workspace /actions
+cd /actions/workspace
 
 terravision graphdata --outfile architecture.json
 cat architecture.json
