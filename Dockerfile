@@ -17,6 +17,7 @@ WORKDIR /actions
 # Retrieve Terravision Project
 # FIXME ideally should reference a build artifact from this repo instead
 RUN ["git", "clone", "https://github.com/patrickchugh/terravision.git"]
+RUN ["git", "checkout", "b8ac1244bb754fb6cdfb0dcfcbd1453dd6ba23a6"]
 RUN ["pip", "install", "-r", "./terravision/requirements.txt"]
 
 COPY entrypoint.sh entrypoint.sh
