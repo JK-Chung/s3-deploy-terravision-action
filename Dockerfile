@@ -12,13 +12,21 @@ RUN ["apt", "install", "-y", "nodejs"]
 RUN ["apt", "install", "-y", "git"]
 RUN ["apt", "install", "-y", "graphviz"]
 
+## Installation of the AWS CLI v2
+RUN ["apt", "install", "-y", "curl"]
+RUN ["apt", "install", "-y", "unzip"]
+RUN ["curl", "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip", "-o", "awscliv2.zip"]
+RUN ["unzip", "awscliv2.zip"]
+RUN ["chmod", "+x", "./aws/install"]
+RUN ["./aws/install"] 
+
 WORKDIR /actions
 
-# Retrieve Terravision Project
-# FIXME ideally should reference a build artifact from this repo instead
+# Retrieve and Install Terravision Project
 RUN ["git", "clone", "https://github.com/patrickchugh/terravision.git"]
-RUN ["git", "checkout", "b8ac1244bb754fb6cdfb0dcfcbd1453dd6ba23a6"]
+RUN ["git", "-C", "./terravision", "checkout", "b8ac1244bb754fb6cdfb0dcfcbd1453dd6ba23a6"]
 RUN ["pip", "install", "-r", "./terravision/requirements.txt"]
+ENV PATH=${PATH}:/actions/terravision
 
 COPY entrypoint.sh entrypoint.sh
 
