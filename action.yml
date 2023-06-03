@@ -7,6 +7,9 @@ inputs:
   aws-secret-access-key:
     description: The Secret Access Key for the AWS credential being used to push into the S3 Bucket
     required: true
+  aws-s3-bucket-region:
+    description: The AWS region in which the bucket is located
+    required: true
   aws-s3-bucket-base-uri:
     description: The base URI of the S3 bucket to push the terravision artifacts to. There should be no trailing slash (e.g. s3://example-bucket/base/path)
     required: true
@@ -16,4 +19,5 @@ runs:
   args:
     - ${{ inputs.aws-access-key-id }}
     - ${{ inputs.aws-secret-access-key }}
+    - ${{ inputs.aws-s3-bucket-region }}
     - ${{ inputs.aws-s3-bucket-base-uri }}

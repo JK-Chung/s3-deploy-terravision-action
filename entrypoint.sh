@@ -1,6 +1,7 @@
 #!/bin/bash -l
 AWS_ACCESS_KEY_ID="$1"
 AWS_SECRET_ACCESS_KEY="$2"
+AWS_DEFAULT_REGION="$3"
 AWS_S3_BUCKET_BASE_URI="$3"
 
 cd /github/workspace
